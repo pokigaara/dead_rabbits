@@ -1,20 +1,18 @@
 from django.db import models
 
 
-class Categories(models.Model):
-    name = models.CharField(max_length=50, verbose_name='категория')
-
-
-    class Meta:
-        verbose_name_plural = 'Категории'
-        verbose_name = 'Категория'
-
-    def __str__(self):
-        return self.name
 
 
 class Menu(models.Model):
-    categories = models.ForeignKey(Categories, on_delete=models.PROTECT, verbose_name='категория')
+    Categories = (
+        (1, 'Супы'),
+        (2, 'Салаты'),
+        (3, 'Основные'),
+        (4, 'Закуски'),
+        (5, 'Десерты'),
+
+    )
+    categories = models.IntegerField(verbose_name='категория', choices=Categories)
     name = models.CharField(max_length=50, verbose_name='назване блюда')
     weight = models.CharField(max_length=20, verbose_name='вес блюда')
     description = models.TextField(max_length=1000, verbose_name='описание')

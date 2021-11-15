@@ -9,4 +9,3 @@ class MYAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Menu, MYAdmin)
-admin.site.register(Categories)

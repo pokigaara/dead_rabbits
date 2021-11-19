@@ -4,9 +4,9 @@ from activity.serializers import *
 
 
 class ActivityCreate(generics.CreateAPIView):
-    serializer_class = ActivityDetailSerializers
+    serializer_class = ActivitySerializers
 
 
 class ActivityListView(generics.ListCreateAPIView):
-    serializer_class = ActivityListSerializers
+    serializer_class = ActivitySerializers
     queryset = Activity.objects.all()

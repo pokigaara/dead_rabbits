@@ -5,9 +5,9 @@ from menu.models import *
 
 
 class MenuCreate(generics.CreateAPIView):
-    serializer_class = MenuDetailSerializers
+    serializer_class = MenuSerializers
 
 
 class MenuListView(generics.ListCreateAPIView):
-    serializer_class = MenuListSerializers
+    serializer_class = MenuSerializers
     queryset = Menu.objects.all()

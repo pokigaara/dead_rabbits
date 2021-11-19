@@ -8,4 +8,3 @@ urlpatterns = [
     path('delet/<int:pk>/', ActivityDetailView.as_view()),
     path('update/<int:pk>/', ActivityUpdateView.as_view()),
 ]
-

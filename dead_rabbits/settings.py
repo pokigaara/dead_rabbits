@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'menu.apps.MenuConfig',
     'activity.apps.ActivityConfig',
+    'reservation.apps.ReservationConfig',
     'rest_framework',
 ]
 

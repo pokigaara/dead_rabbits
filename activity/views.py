@@ -10,3 +10,13 @@ class ActivityCreate(generics.CreateAPIView):
 class ActivityListView(generics.ListCreateAPIView):
     serializer_class = ActivitySerializers
     queryset = Activity.objects.all()
+
+
+class ActivityDetailView(generics.RetrieveDestroyAPIView):
+    serializer_class = ActivitySerializers
+    queryset = Activity.objects.all()
+
+
+class ActivityUpdateView(generics.RetrieveUpdateAPIView):
+    serializer_class = ActivitySerializers
+    queryset = Activity.objects.all()

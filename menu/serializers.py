@@ -8,3 +8,9 @@ class MenuSerializers(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class CategorSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Categories
+        fields = '__all__'
+
+

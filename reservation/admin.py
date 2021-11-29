@@ -9,4 +9,5 @@ class MyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Reserv, MyAdmin)
+admin.site.register(Table)
 # Register your models here.

@@ -3,6 +3,10 @@ from datetime import time
 from django.db.models.signals import post_save
 
 
+class Table(models.Model):
+    number = models.SmallIntegerField(max_length=2)
+
+
 class Reserv(models.Model):
     name = models.CharField(max_length=30, verbose_name='имя')
     surname = models.CharField(max_length=50, verbose_name='фамилия')
@@ -12,7 +16,7 @@ class Reserv(models.Model):
     time = models.TimeField(verbose_name='время')
     time_hour = models.TimeField(editable=False, null=True, default=None)
     people = models.IntegerField(verbose_name='количество человек')
-    table = models.IntegerField(verbose_name='номер стола', null=True, blank=True, )
+    table = models.ForeignKey(Table, verbose_name='номер стола', null=True, blank=True, on_delete=models.CASCADE)
     confirmation = models.BooleanField(default=False, null=True, blank=True, verbose_name='подтвержденеи брони')
 
     class Meta:

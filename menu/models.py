@@ -14,7 +14,7 @@ class Menu(models.Model):
     name = models.CharField(max_length=50, verbose_name='назване блюда')
     weight = models.CharField(max_length=20, verbose_name='вес блюда')
     description = models.TextField(max_length=1000, verbose_name='описание')
-    price = models.CharField(max_length=10, verbose_name='цена')
+    price = models.FloatField(verbose_name='цена')
     photo = models.ImageField(verbose_name='фото', upload_to='menu.static')
 
     class Meta:
@@ -27,4 +27,3 @@ class Menu(models.Model):
 
 class PreOrder(models.Model):
     pass
-

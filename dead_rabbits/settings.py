@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'activity.apps.ActivityConfig',
     'reservation.apps.ReservationConfig',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_swagger',
 ]
 
 REST_FRAMEWORK = {

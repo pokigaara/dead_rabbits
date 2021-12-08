@@ -4,12 +4,12 @@ from django.db.models.signals import post_save
 
 
 class Table(models.Model):
-    number = models.SmallIntegerField(max_length=2)
+    number = models.SmallIntegerField(verbose_name='столы')
 
 
 class Reserv(models.Model):
     name = models.CharField(max_length=30, verbose_name='имя')
-    surname = models.CharField(max_length=50, verbose_name='фамилия')
+    surname = models.CharField(max_length=30, verbose_name='фамилия')
     phone = models.CharField(max_length=13, verbose_name='телефон')
     email = models.EmailField(verbose_name='почта')
     date = models.DateField(verbose_name='дата')

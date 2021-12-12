@@ -15,7 +15,7 @@ class Menu(models.Model):
     weight = models.CharField(max_length=20, verbose_name='вес блюда')
     description = models.TextField(max_length=1000, verbose_name='описание')
     price = models.FloatField(verbose_name='цена')
-    photo = models.ImageField(verbose_name='фото', upload_to='menu.static')
+    photo = models.ImageField(verbose_name='фото')
 
     class Meta:
         verbose_name_plural = 'Меню'

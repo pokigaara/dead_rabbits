@@ -6,7 +6,7 @@ class Activity(models.Model):
     description = models.TextField(max_length=1000, verbose_name='описание')
     data = models.DateField(verbose_name='дата мероприятия')
     time = models.TimeField(verbose_name='время мероприятия')
-    photo = models.ImageField(verbose_name='фото', upload_to='activity.static')
+    photo = models.ImageField(verbose_name='фото')
 
     class Meta:
         verbose_name_plural = 'Мероприятия'

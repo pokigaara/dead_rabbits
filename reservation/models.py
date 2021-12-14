@@ -3,21 +3,30 @@ from datetime import time
 from django.db.models.signals import post_save
 
 
+
 class Table(models.Model):
     number = models.SmallIntegerField(verbose_name='столы')
+
+    class Meta:
+        verbose_name_plural = 'Столы'
+        verbose_name = 'Стол'
+
+    def __int__(self):
+        return self.number
 
 
 class Reserv(models.Model):
     name = models.CharField(max_length=30, verbose_name='имя')
-    surname = models.CharField(max_length=30, verbose_name='фамилия')
+    surname = models.CharField(max_length=30, verbose_name='фамилия', blank=True, null=True)
     phone = models.CharField(max_length=13, verbose_name='телефон')
-    email = models.EmailField(verbose_name='почта')
+    email = models.EmailField(verbose_name='почта', blank=True, null=True)
     date = models.DateField(verbose_name='дата')
     time = models.TimeField(verbose_name='время')
     time_hour = models.TimeField(editable=False, null=True, default=None)
     people = models.IntegerField(verbose_name='количество человек')
     table = models.ForeignKey(Table, verbose_name='номер стола', null=True, blank=True, on_delete=models.CASCADE)
     confirmation = models.BooleanField(default=False, null=True, blank=True, verbose_name='подтвержденеи брони')
+    published = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = 'брони'
@@ -32,3 +41,6 @@ class Reserv(models.Model):
 
     def __str__(self):
         return self.name
+
+
+

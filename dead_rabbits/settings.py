@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-ipnsgkjy7va%*#qvy0^b5k(2&8k++w6)2$#6w@m_vctfh5fs=-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pokigaara.pythonanywhere.com']
+# ALLOWED_HOSTS = ['pokigaara.pythonanywhere.com']
 
 # Application definition
 
@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'activity.apps.ActivityConfig',
     'reservation.apps.ReservationConfig',
     'rest_framework',
-    'rest_framework.authtoken',
     'rest_framework_swagger',
     'corsheaders',
+    'home.apps.HomeConfig',
 ]
 
 REST_FRAMEWORK = {
@@ -74,20 +74,20 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-	'libraries': {
-                    'staticfiles': 'django.templatetags.static',
-                 },
+            'libraries': {
+                'staticfiles': 'django.templatetags.static',
+            },
         },
     },
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
-
-CORS_ORIGIN_WHITELIST = (
-	'http://37.214.47.154:3000',
-	'http://localhost:3000',
-	'http://localhost:8000',
-)
+# CORS_ORIGIN_ALLOW_ALL = False
+#
+# CORS_ORIGIN_WHITELIST = (
+#     'http://37.214.47.154:3000',
+#     'http://localhost:3000',
+#     'http://localhost:8000',
+# )
 WSGI_APPLICATION = 'dead_rabbits.wsgi.application'
 
 # Database

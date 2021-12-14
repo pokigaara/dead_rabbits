@@ -4,6 +4,10 @@ from django.db import models
 class Categories(models.Model):
     categories = models.CharField(max_length=50, verbose_name='категория')
 
+    class Meta:
+        verbose_name_plural = 'Категории'
+        verbose_name = 'Категория'
+
     def __str__(self):
         return self.categories
 

@@ -12,7 +12,8 @@ router.register('category', CetegorView)
 
 urlpatterns = router.urls
 
-# MenuViewurlpatterns = [
+# MenuView
+# urlpatterns = [
 #     path('view', MenuView.as_view()),
 #     # path('create', MenuCreate.as_view()),
 #     # path('all', MenuListView.as_view()),

@@ -7,6 +7,7 @@ router = SimpleRouter()
 
 
 router.register('home', HomeView)
+router.register('photo', PhotoView)
 
 
 urlpatterns = router.urls

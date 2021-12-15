@@ -1,4 +1,4 @@
-from tg_bot import config
+import config
 import requests
 
 import logging

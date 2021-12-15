@@ -11,13 +11,17 @@ class ReservCreateUser(generics.CreateAPIView):
     serializer_class = ReservCreatUserSerial
 
 
+
+
 class ReservUpdateAdmin(generics.RetrieveUpdateAPIView):
     serializer_class = ReservUptadeAdminSerial
     queryset = Reserv.objects.all()
 
 
-def DetailView():
-    return Reserv.objects.all().order_by("published").last()
+
+
+def detailview():
+    return ReservCreatUserSerial(Reserv.objects.last()).data
 
 
 def send_telegram(text):
